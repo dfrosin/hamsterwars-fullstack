@@ -8,7 +8,7 @@ body {
 }
 main {
   background-color: rgb(255, 255, 255);
-  min-height: 80vh;
+  min-height: 100vh;
 }
 header {
   z-index: -3;

@@ -99,7 +99,7 @@ function Rivalry() {
                         setDefender(hamster)
                       }}
                     >
-                      <h2>{hamster.name}</h2>
+                      <h3>{hamster.name}</h3>
                       <img
                         src={correctImgName(hamster.imgName)}
                         alt={`picture of ${hamster.name}`}
