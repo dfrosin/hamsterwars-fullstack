@@ -1,0 +1,5 @@
+dist
+dist-ssr
+.DS_Store
+node_modules
+database/firebaseConfig.json

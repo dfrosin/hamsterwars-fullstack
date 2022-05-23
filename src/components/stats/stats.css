@@ -1,0 +1,31 @@
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-bottom: 4em;
+  padding: 0 4em;
+}
+.best-container,
+.worst-container {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.best-container {
+  z-index: 4;
+}
+.stats h2 {
+  display: block;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

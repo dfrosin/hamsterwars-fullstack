@@ -1,0 +1,60 @@
+.fight-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3;
+}
+.fight-container h2 {
+  display: block;
+  position: relative;
+  margin: 0;
+  z-index: 3;
+  padding: 1em;
+  border-radius: 2em;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s;
+}
+.fight-container h2:hover {
+  transform: scale(1.05);
+}
+.fight {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+  margin-bottom: 4em;
+  z-index: 2;
+  animation: 1s rotateOnLoad linear 0s;
+  animation-iteration-count: 0;
+  transition: transform 1s;
+}
+.fight {
+  gap: 3em;
+}
+.winner {
+  flex-direction: column;
+}
+.finish {
+  animation-iteration-count: 1;
+}
+.loading {
+  animation-iteration-count: infinite;
+}
+.close {
+  transform: scale(0);
+}
+@keyframes rotateOnLoad {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

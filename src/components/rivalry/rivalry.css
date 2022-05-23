@@ -1,0 +1,61 @@
+.choose-challenger,
+.choose-defender {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  animation: 1s zoomIn;
+  padding: 0 3em;
+}
+.rivalry > h2,
+.rivalry > h3 {
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  text-align: center;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.rivalry-hamster {
+  display: flex;
+  height: 10em;
+  width: 6em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5em;
+  padding: 1em;
+  border-radius: 2em;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  color: white;
+  transition: transform 0.3s;
+  animation: 1s zoomIn;
+  box-shadow: 0em 0em 1em rgb(98, 69, 30);
+}
+.rivalry-hamster:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.rivalry-hamster img {
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.536);
+}
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-container > p {
+  display: block;
+  width: 5em;
+  text-align: center;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

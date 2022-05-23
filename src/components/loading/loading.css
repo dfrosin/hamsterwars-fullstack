@@ -1,0 +1,55 @@
+.loading-container {
+  height: 15em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-animation {
+  position: relative;
+  animation: rotateLoad 1.5s infinite linear 0s;
+  height: 6em;
+  width: 6em;
+  border-radius: 100%;
+}
+
+.loading-animation .loading {
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  border-radius: 100%;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+}
+.component1 {
+  top: 0;
+  right: 2.5em;
+}
+.component2 {
+  top: 1.3em;
+  right: 0.3em;
+}
+.component3 {
+  top: 1.3em;
+  left: 0.3em;
+}
+.component4 {
+  bottom: 0;
+  right: 2.5em;
+}
+.component5 {
+  bottom: 1.3em;
+  left: 0.3em;
+}
+.component6 {
+  bottom: 1.3em;
+  right: 0.3em;
+}
+
+@keyframes rotateLoad {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

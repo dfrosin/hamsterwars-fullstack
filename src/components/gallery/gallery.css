@@ -1,0 +1,269 @@
+.sub-nav {
+  display: flex;
+  height: 4em;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-nav a {
+  display: flex;
+  align-items: center;
+  padding: 0 2em;
+  height: 4em;
+  z-index: 2;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(247, 182, 193), rgb(237, 93, 93));
+  background-clip: text;
+  transition: transform 0.3s, text-shadow 0.3s;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub-nav a:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 5px rgba(229, 112, 112, 0.627);
+}
+.Gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  flex-direction: column;
+  z-index: 1;
+}
+.Gallery h2:not(.add-new-hamster h2) {
+  display: block;
+  z-index: 2;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hamster-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+.add-hamster-container {
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  z-index: 3;
+  border-radius: 100%;
+}
+.add-hamster-container button {
+  height: 1.7em;
+  width: 1.7em;
+  font-size: 1.5em;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  color: white;
+  border: none;
+  border-radius: 100%;
+  transition: box-shadow 0.2s, color 0.2s, transform 0.2s;
+}
+.add-hamster-container button:hover {
+  box-shadow: inset 2px 2px 10px rgba(79, 22, 22, 0.4);
+  color: rgba(213, 213, 213, 0.8);
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.add-hamster-container:hover::after {
+  content: 'Lägg till en ny hamster';
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  position: absolute;
+  right: 3em;
+  top: 0;
+  width: 10.3em;
+  display: block;
+  color: white;
+  padding: 0.7em;
+  font-size: 1em;
+  animation: 0.2s zoomInTooltip;
+  border-radius: 2em;
+  box-shadow: 0em 0em 1em rgb(98, 69, 30);
+}
+.add-new-hamster {
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  box-shadow: 0em 0em 1em rgb(98, 69, 30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  animation: 0.4s fadeIn;
+  position: fixed;
+  height: 27em;
+  width: 25em;
+  top: 5em;
+  z-index: 5;
+  border-radius: 2em;
+}
+.add-new-hamster h2 {
+  color: white;
+  padding: 0.3em;
+}
+.add-new-hamster::after {
+  content: '';
+  height: 27em;
+  width: 25em;
+  position: absolute;
+  top: 0;
+  border-radius: 2em;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  z-index: -1;
+}
+.add-new-hamster .hamster-image {
+  width: 7em;
+  height: 7em;
+  padding: 0.2em;
+  margin-bottom: 1em;
+  border-radius: 100%;
+  object-fit: cover;
+  border: solid transparent 0.2em;
+  transition: border 1s;
+}
+.add-new-hamster .hamster-image:hover {
+  border: solid rgb(209, 97, 97) 0.2em;
+}
+.add-new-hamster::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  animation: 0.2s fadeIn;
+  height: 100vh;
+  width: 100vw;
+  z-index: -2;
+  backdrop-filter: blur(4px);
+}
+.add-new-hamster button {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  color: rgb(224, 120, 120);
+  border-radius: 2em;
+  margin: 0 0.3em;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid transparent;
+  cursor: pointer;
+  transition: color 0.5s, background-color 0.5s, border 0.5s;
+}
+.add-new-hamster input {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  width: 15em;
+  height: 1.6em;
+  color: black;
+  text-shadow: 0px 0px 5px #0000002d;
+  margin-bottom: 0.5em;
+  border-radius: 2em;
+  text-align: center;
+  transition: background-color 0.5s;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+.input-container {
+  position: relative;
+}
+.warning {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(224, 120, 120);
+  border-radius: 100%;
+  width: 1.2em;
+  height: 1.2em;
+  text-align: center;
+  position: absolute;
+  right: -2em;
+  top: 0.2em;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+.warning:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.warning:hover::after {
+  content: attr(warning-message);
+  background-color: rgba(251, 187, 187, 0.8);
+  backdrop-filter: blur(10px);
+  color: white;
+  animation: fadeIn 0.5s;
+  font-size: 0.8em;
+  position: absolute;
+  right: -12em;
+  top: -1em;
+  width: 10em;
+  padding: 1em;
+  border-radius: 2em;
+}
+.add-new-hamster input::placeholder {
+  color: rgb(224, 120, 120);
+}
+.add-new-hamster input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.add-new-hamster button:not(.add-new-hamster button:disabled):hover {
+  background-color: rgba(0, 0, 0, 0.164);
+  border: solid black;
+  color: black;
+}
+.add-new-hamster button:disabled {
+  background-color: rgba(128, 128, 128, 0.4);
+  color: rgba(0, 0, 0, 0.631);
+  cursor: not-allowed;
+}
+.file-upload {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 1em;
+  width: 15em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  color: rgb(224, 120, 120);
+  text-shadow: 0px 0px 5px #0000002d;
+  border: solid transparent;
+  transition: color 0.5s, background-color 0.5s, border 0.5s;
+  padding: 0.3em;
+  border-radius: 2em;
+  margin-bottom: 0.5em;
+}
+.file-upload:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.164);
+  border: solid black;
+  cursor: pointer;
+}
+.upload-input {
+  display: none;
+}
+
+@keyframes zoomInTooltip {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,70 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+.home h2 {
+  display: block;
+  z-index: 3;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cutest-container {
+  position: relative;
+  margin-top: 1em;
+  height: 24em;
+  width: 15em;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  color: white;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2em;
+  box-shadow: 0em 0em 1em rgb(98, 69, 30);
+  transition: transform 0.5s, box-shadow 0.5s;
+  animation: 1s 1 growAfterAnimation;
+  color: rgb(36, 36, 36);
+  z-index: 4;
+}
+.cutest-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0em 0em 3em rgb(85, 73, 39);
+}
+.cutest-container p,
+.cutest-container h3 {
+  color: white;
+}
+.hamster-img {
+  width: 12em;
+  height: 12em;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0em 0em 2em rgba(0, 0, 0, 0.647);
+}
+.try-again {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 900;
+  color: rgb(224, 120, 120);
+  border-radius: 2em;
+  margin: 1em 0.3em 0 0.3em;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid transparent;
+  cursor: pointer;
+  transition: color 0.5s, background-color 0.5s, border 0.5s;
+}
+.try-again:hover {
+  background-color: rgba(235, 161, 161, 0.164);
+  color: rgb(135, 1, 1);
+  border: solid rgb(221, 110, 110);
+}

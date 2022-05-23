@@ -1,0 +1,47 @@
+.match-winners {
+  display: flex;
+  gap: 0.2em;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+  margin: 0.4em;
+  padding: 0.4em 0;
+  /* height: 13.2em; */
+  width: 9.2em;
+  border-radius: 1.55em;
+}
+.match-winners h3 {
+  display: block;
+  z-index: 2;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.beaten-hamster {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  height: 1.7em;
+  width: 6em;
+  padding: 0.2em;
+  border-radius: 2em;
+}
+.beaten-hamster img {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.not-able {
+  display: block;
+  z-index: 2;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

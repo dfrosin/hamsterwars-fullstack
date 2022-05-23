@@ -1,0 +1,78 @@
+.game-card {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5em;
+  margin: 0.5em 2em;
+  z-index: 3;
+  border-radius: 2em;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  box-shadow: 0em 0em 1em rgb(98, 69, 30);
+  transition: transform 0.5s, text-shadow 0.5s;
+}
+.game-card::before {
+  content: '';
+  position: absolute;
+  height: 3.5em;
+  width: 40em;
+}
+.game-card:hover {
+  transform: scale(1.05);
+  text-shadow: 0px 0px 5px #fafafa;
+  cursor: default;
+}
+.game-winner-container,
+.game-loser-container {
+  display: flex;
+  width: 20em;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  z-index: 3;
+}
+.game-image {
+  height: 2em;
+  width: 2em;
+  margin: 0.2em;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.game-card p {
+  color: white;
+}
+.results {
+  text-transform: uppercase;
+  margin: 0 2em;
+  color: white;
+  font-size: 0.9em;
+}
+.delete-match-button {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  padding-bottom: 0.2em;
+  position: absolute;
+  font-size: 1.2em;
+  border-radius: 100%;
+  right: -2em;
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: transparent;
+}
+.game-card:hover .delete-match-button {
+  transition: opacity 0.5s;
+  transition: border 0.5s;
+  opacity: 1;
+}
+
+.delete-match-button:hover {
+  border: solid rgb(210, 93, 93) 1px;
+}

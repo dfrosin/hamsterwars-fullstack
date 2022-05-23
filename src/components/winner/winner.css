@@ -1,0 +1,112 @@
+.winner {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+  margin-bottom: 4em;
+  z-index: 2;
+  animation: 1s rotateOnLoad linear 0s;
+  animation-iteration-count: 0;
+  transition: transform 1s;
+}
+.winner h2 {
+  display: block;
+  position: absolute;
+  top: -4em;
+  margin: 0;
+  padding: 1em;
+  border-radius: 2em;
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s;
+}
+.winner-container > h2 {
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  z-index: 0;
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.loser-container > h2 {
+  background: linear-gradient(45deg, rgb(140, 201, 239), rgb(93, 119, 237));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.behind-h2 {
+  position: absolute;
+  top: -4.5em;
+  display: block;
+  background-color: white;
+  width: 15em;
+  height: 2em;
+}
+
+.winner-container,
+.loser-container {
+  position: relative;
+  height: 24em;
+  width: 15em;
+  color: white;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2em;
+  transition: transform 0.5s, box-shadow 0.5s;
+  animation: 1s 1 growAfterAnimation;
+}
+.winner-container {
+  z-index: 4;
+  position: relative;
+  transition: opacity 0.5s;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  margin-top: 6em;
+}
+.winner-container:hover {
+  opacity: 0;
+}
+.loser-container {
+  position: absolute;
+  background: linear-gradient(45deg, rgb(140, 201, 239), rgb(93, 119, 237));
+  box-shadow: 0em 0em 1em rgb(98, 69, 30);
+  animation: 5s fadeIn;
+  z-index: 3;
+  top: 13em;
+}
+.new-game-button {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 900;
+  color: rgb(224, 120, 120);
+  border-radius: 2em;
+  margin: 1em 0.3em 0 0.3em;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid transparent;
+  cursor: pointer;
+  transition: color 0.5s, background-color 0.5s, border 0.5s;
+}
+.new-game-button:hover {
+  background-color: rgba(235, 161, 161, 0.164);
+  color: rgb(135, 1, 1);
+  border: solid rgb(221, 110, 110);
+}
+.try-again-img:hover {
+  animation: wiggle 500ms infinite;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
