@@ -6,6 +6,8 @@ body {
   overflow-x: hidden;
 }
 .App {
+  touch-action: none;
+  touch-action: pan-y;
   min-height: 100vh;
   background-color: white;
   font-size: 1.5em;
@@ -124,14 +126,14 @@ footer p:hover {
     display: flex;
     width: 8em;
     top: 5.9em;
-    right: -10em;
+    transform: translateX(20em);
     flex-direction: column;
     border-radius: 1em 0 0 1em;
     background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
     padding: 1em;
     opacity: 0.8;
-    transition: right 0.5s, opacity 0.5s;
-    z-index: 4;
+    transition: transform 0.5s, opacity 0.5s;
+    z-index: 5;
     box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.468);
   }
   .menu a {
@@ -147,31 +149,22 @@ footer p:hover {
     color: white;
     z-index: 5;
   }
-  .menu a::before {
-    content: '';
-    position: absolute;
-    pointer-events: none;
-    display: block;
-    transition: right 0.3s;
-    transform: rotate(45deg);
-    border-radius: 0.3em;
-    box-shadow: 0em 0em 1em rgb(98, 69, 30);
-    height: 3em;
-    right: -5em;
-    width: 3em;
-    background-color: rgb(244, 240, 240);
-  }
-  .menu a:hover::before {
-    right: -4em;
-  }
-  .menu .active::before {
-    right: -3.5em;
-  }
   .menu a:hover {
     text-shadow: 0px 0px 5px #fafafa;
   }
+  .menu .active::after {
+    content: '';
+    position: absolute;
+    right: 0.5em;
+    width: 0;
+    height: 0;
+    border-radius: 0.2em;
+    border-top: 0.5em solid transparent;
+    border-right: 1em solid rgb(255, 255, 255);
+    border-bottom: 0.5em solid transparent;
+  }
   .open-menu {
-    right: 0;
+    transform: translateX(9.22em);
     opacity: 1;
   }
   .hamburger {
