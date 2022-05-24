@@ -29,6 +29,12 @@ function Home() {
   }, [])
   return (
     <div className="home">
+      <h1>Välkommen till Hamster Wars</h1>
+      <p className="description">
+        Här kan du titta i vårt galleri med hamstrar och rösta på de du tycker
+        om mest under match-fliken. Du kan även se statistik från tidigare
+        matcher och hur det har gått för de olika hamstrarna.
+      </p>
       <h2>Vår mest framgångsrika hamster</h2>
       {cutest !== null ? (
         <div className="cutest-container">
@@ -66,13 +72,13 @@ function Home() {
           </p>
         </div>
       ) : (
-        <>
-          <p> Det går inte att nå servern just nu </p>
+        <div className="try-again-container">
+          <p className="try-again-p"> Det går inte att nå servern just nu </p>
           <img className="try-again-img" src={exampleHamster} alt="" />
           <button className="try-again" onClick={getData}>
             Försök igen
           </button>
-        </>
+        </div>
       )}
     </div>
   )

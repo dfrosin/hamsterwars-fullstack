@@ -36,6 +36,7 @@
 }
 .Gallery h2:not(.add-new-hamster h2) {
   display: block;
+  text-align: center;
   z-index: 2;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   background-clip: text;
@@ -57,6 +58,18 @@
   right: 2em;
   bottom: 2em;
   z-index: 3;
+  border-radius: 100%;
+}
+.uploading {
+  position: absolute;
+  top: 7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.353);
+  width: 10em;
+  height: 10em;
+  z-index: 5;
   border-radius: 100%;
 }
 .add-hamster-container button {
@@ -100,8 +113,9 @@
   flex-wrap: wrap;
   animation: 0.4s fadeIn;
   position: fixed;
-  height: 27em;
-  width: 25em;
+  height: 32em;
+  width: 30em;
+  max-width: 80%;
   top: 5em;
   z-index: 5;
   border-radius: 2em;
@@ -112,8 +126,8 @@
 }
 .add-new-hamster::after {
   content: '';
-  height: 27em;
-  width: 25em;
+  height: inherit;
+  width: 100%;
   position: absolute;
   top: 0;
   border-radius: 2em;
@@ -121,8 +135,8 @@
   z-index: -1;
 }
 .add-new-hamster .hamster-image {
-  width: 7em;
-  height: 7em;
+  width: 10em;
+  height: 10em;
   padding: 0.2em;
   margin-bottom: 1em;
   border-radius: 100%;
@@ -159,14 +173,19 @@
 .add-new-hamster input {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
+  width: 100%;
   width: 15em;
   height: 1.6em;
+  font-size: 1em;
   color: black;
   text-shadow: 0px 0px 5px #0000002d;
-  margin-bottom: 0.5em;
+  margin: 0 1em 0.5em 1em;
   border-radius: 2em;
   text-align: center;
   transition: background-color 0.5s;
+}
+.add-new-hamster > h2 {
+  text-align: center;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -177,7 +196,11 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 .input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  width: 100%;
 }
 .warning {
   background-color: rgba(255, 255, 255, 0.5);
@@ -187,7 +210,7 @@ input[type='number'] {
   height: 1.2em;
   text-align: center;
   position: absolute;
-  right: -2em;
+  right: 10%;
   top: 0.2em;
   transition: background-color 0.5s;
   cursor: pointer;
@@ -232,14 +255,14 @@ input[type='number'] {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8em;
+  font-size: 0.96em;
   color: rgb(224, 120, 120);
   text-shadow: 0px 0px 5px #0000002d;
   border: solid transparent;
   transition: color 0.5s, background-color 0.5s, border 0.5s;
   padding: 0.3em;
   border-radius: 2em;
-  margin-bottom: 0.5em;
+  margin: 0 1em 0.5em 1em;
 }
 .file-upload:hover {
   color: rgb(0, 0, 0);
@@ -249,6 +272,19 @@ input[type='number'] {
 }
 .upload-input {
   display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .sub-nav {
+    flex-direction: column;
+    margin-top: 1em;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .warning:hover::after {
+    top: -6em;
+    right: -5em;
+  }
 }
 
 @keyframes zoomInTooltip {

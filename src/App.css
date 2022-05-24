@@ -5,13 +5,11 @@ body {
 }
 .App {
   min-height: 100vh;
+  background-color: white;
+  font-size: 1.5em;
 }
 main {
-  background-color: rgb(255, 255, 255);
   min-height: 100vh;
-}
-header {
-  z-index: -3;
 }
 .logo-container {
   width: 10em;
@@ -22,7 +20,10 @@ header {
 .header-logo:hover {
   animation: wiggle 500ms infinite;
 }
-nav {
+.mobile-nav {
+  display: none;
+}
+.desktop-nav {
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   box-shadow: inset 5px 5px 10px #1e2127ae;
   height: 6em;
@@ -32,7 +33,7 @@ nav {
   padding: 0 4em;
   z-index: -2;
 }
-nav a {
+.desktop-nav a {
   position: relative;
   z-index: 0;
   color: rgb(243, 232, 219);
@@ -46,10 +47,10 @@ nav a {
   align-items: center;
   transition: text-shadow 0.4s;
 }
-nav a:hover {
+.desktop-nav a:hover {
   text-shadow: 0px 0px 5px #fafafa;
 }
-nav a::before {
+.desktop-nav a::before {
   position: absolute;
   pointer-events: none;
   z-index: 0;
@@ -61,14 +62,13 @@ nav a::before {
   height: 15em;
   width: 15em;
   cursor: default;
-  clip: rect(0px 300px 50px 0px);
+  clip: rect(0px 400px 50px 0px);
 }
-nav .active::before {
-  content: '';
+.desktop-nav .active::before {
   border-radius: 50%;
   top: 3em;
 }
-nav a:hover::before {
+.desktop-nav a:hover::before {
   top: 3.5em;
 }
 footer {
@@ -87,6 +87,136 @@ footer p {
 footer p:hover {
   text-shadow: 0px 0px 5px #fafafa;
 }
+
+@media screen and (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+  .logo-container {
+    width: 4em;
+  }
+  .header-logo {
+    height: 2.5em;
+  }
+  .mobile-nav {
+    background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+    box-shadow: inset 5px 5px 10px #1e2127ae;
+    height: 6em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 2em;
+    z-index: 2;
+  }
+  .mobile-nav h1 {
+    display: block;
+    margin-right: 1.3em;
+    color: white;
+    font-weight: 300;
+  }
+  .menu {
+    position: absolute;
+    display: flex;
+    width: 8em;
+    top: 5.9em;
+    right: -10em;
+    flex-direction: column;
+    border-radius: 1em 0 0 1em;
+    background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+    padding: 1em;
+    opacity: 0.8;
+    transition: right 0.5s, opacity 0.5s;
+    z-index: 4;
+    box-shadow: 0em 0em 1em rgb(98, 69, 30);
+  }
+  .menu a {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: text-shadow 0.4s;
+    width: 100%;
+    height: 2em;
+    color: white;
+    z-index: 5;
+  }
+  .menu a::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    display: block;
+    transition: right 0.3s;
+    transform: rotate(45deg);
+    border-radius: 0.3em;
+    box-shadow: 0em 0em 1em rgb(98, 69, 30);
+    height: 3em;
+    right: -5em;
+    width: 3em;
+    background-color: rgb(244, 240, 240);
+  }
+  .menu a:hover::before {
+    right: -4em;
+  }
+  .menu .active::before {
+    right: -3.5em;
+  }
+  .menu a:hover {
+    text-shadow: 0px 0px 5px #fafafa;
+  }
+  .open-menu {
+    right: 0;
+    opacity: 1;
+  }
+  .hamburger {
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+    display: flex;
+    height: 3em;
+    width: 3em;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.2em;
+  }
+  .hamburger:hover .line {
+    box-shadow: 0px 0px 5px #fafafa;
+  }
+  .line {
+    position: absolute;
+    height: 0.1em;
+    width: 1em;
+    right: 1em;
+    background-color: white;
+    border-radius: 1em;
+    transition: transform 0.5s, opacity 0.5s, top 0.5s, box-shadow 0.4s;
+  }
+  .line1 {
+    top: 1.2em;
+  }
+  .line2 {
+    top: 1.5em;
+  }
+  .line3 {
+    top: 1.8em;
+  }
+
+  .open .line1 {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 1.5em;
+  }
+  .open .line2 {
+    opacity: 0;
+  }
+  .open .line3 {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 1.5em;
+  }
+}
+
 @keyframes wiggle {
   0% {
     transform: rotate(0deg);

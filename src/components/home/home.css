@@ -6,9 +6,21 @@
   margin-top: 1em;
   margin-bottom: 2em;
 }
-.home h2 {
+.home h2,
+.home h1 {
   display: block;
+  padding: 0 1em;
   z-index: 3;
+  text-align: center;
+  background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
+  background-clip: text;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.description {
+  display: block;
+  padding: 0 3em;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   background-clip: text;
   color: white;
@@ -67,4 +79,19 @@
   background-color: rgba(235, 161, 161, 0.164);
   color: rgb(135, 1, 1);
   border: solid rgb(221, 110, 110);
+}
+.try-again-container {
+  animation: fadeInFail 3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes fadeInFail {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

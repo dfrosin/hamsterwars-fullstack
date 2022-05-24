@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Routes, Route, NavLink } from 'react-router-dom'
 import Home from './components/home/Home'
 import Fight from './components/fight/Fight'
@@ -8,12 +9,20 @@ import './App.css'
 import logo from './hamster-logo.png'
 
 function App() {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
   return (
-    <div className="App">
+    <div
+      className="App"
+      onClick={() => {
+        if (hamburgerOpen) {
+          setHamburgerOpen(false)
+        }
+      }}
+    >
       <header>
-        <nav>
+        <nav className="desktop-nav">
           <div className="logo-container">
-            <img className="header-logo" src={logo} alt="" />
+            <img className="header-logo" src={logo} alt="site logo" />
           </div>
           <NavLink className="nav-home" to="/">
             Hem
@@ -30,6 +39,57 @@ function App() {
           <NavLink className="nav-history" to="/history">
             Historik
           </NavLink>
+        </nav>
+        <nav className="mobile-nav">
+          <div className="logo-container">
+            <img className="header-logo" src={logo} alt="site logo" />
+          </div>
+          <h1>Hamster Wars</h1>
+          <div
+            className={`hamburger${hamburgerOpen ? ' open' : ''}`}
+            onClick={() => setHamburgerOpen(!hamburgerOpen)}
+          >
+            <div className="line line1"></div>
+            <div className="line line2"></div>
+            <div className="line line3"></div>
+          </div>
+          <div className={`menu${hamburgerOpen ? ' open-menu' : ''}`}>
+            <NavLink
+              onClick={() => setHamburgerOpen(false)}
+              className="nav-home"
+              to="/"
+            >
+              Hem
+            </NavLink>
+            <NavLink
+              onClick={() => setHamburgerOpen(false)}
+              className="nav-fight"
+              to="/fight"
+            >
+              Match
+            </NavLink>
+            <NavLink
+              onClick={() => setHamburgerOpen(false)}
+              className="nav-gallery"
+              to="/gallery"
+            >
+              Galleri
+            </NavLink>
+            <NavLink
+              onClick={() => setHamburgerOpen(false)}
+              className="nav-stats"
+              to="/stats"
+            >
+              Statistik
+            </NavLink>
+            <NavLink
+              onClick={() => setHamburgerOpen(false)}
+              className="nav-history"
+              to="/history"
+            >
+              Historik
+            </NavLink>
+          </div>
         </nav>
       </header>
       <main>

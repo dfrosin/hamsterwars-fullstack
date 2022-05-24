@@ -21,6 +21,7 @@ function Gallery() {
   const [hamsters, setHamsters] = useRecoilState<Hamster[] | null>(HamstersAtom)
   const [matches, setMatches] = useRecoilState<Match[] | null>(MatchesAtom)
   const [addNew, setAddNew] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [newName, setNewName] = useState('')
   const [newAge, setNewAge] = useState(0)
   const [newLoves, setNewLoves] = useState('')
@@ -73,6 +74,7 @@ function Gallery() {
 
   function uploadHamster() {
     let imageName: string
+    setLoading(true)
     if (newImage) {
       const image = newImage
       const storageRef = ref(storage, newName)
@@ -82,6 +84,7 @@ function Gallery() {
           postData()
           setNewImage(null)
           setAddNew(false)
+          setLoading(false)
           setImgUrl('')
         })
       })
@@ -111,12 +114,12 @@ function Gallery() {
             settings
           )
           const data: any = await response.json()
-          getMatches()
-          return console.log(data)
+          console.log(data)
         } catch (e: any) {
-          console.log(e.message)
-          return e
+          console.log(e)
         }
+        getMatches()
+        getHamsters()
       }
     }
   }
@@ -167,6 +170,11 @@ function Gallery() {
               )}
               {addNew ? (
                 <div className="add-new-hamster">
+                  {loading ? (
+                    <div className="uploading">
+                      <Loading />
+                    </div>
+                  ) : null}
                   <h2>Lägg till en ny hamster</h2>
                   {imgUrl ? (
                     <img
@@ -230,7 +238,7 @@ function Gallery() {
                       type="text"
                       placeholder="Tycker om att ..."
                     />
-                    {!nameIsValid ? (
+                    {!lovesIsValid ? (
                       <div
                         warning-message="Nåt tycker väl hamstern om att göra? Fyll i en aktivitet."
                         className="warning"
@@ -249,7 +257,7 @@ function Gallery() {
                         onChange={(event) => hamsterImage(event)}
                       />
                     </label>
-                    {!nameIsValid ? (
+                    {!imgIsValid ? (
                       <div
                         warning-message="Vi vill se hur hamstern ser ut! Ladda upp en bild!"
                         className="warning"

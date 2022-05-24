@@ -5,17 +5,12 @@
   align-items: center;
   height: 2.5em;
   margin: 0.5em 2em;
+  width: 80%;
   z-index: 3;
   border-radius: 2em;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   box-shadow: 0em 0em 1em rgb(98, 69, 30);
   transition: transform 0.5s, text-shadow 0.5s;
-}
-.game-card::before {
-  content: '';
-  position: absolute;
-  height: 3.5em;
-  width: 40em;
 }
 .game-card:hover {
   transform: scale(1.05);
@@ -25,7 +20,7 @@
 .game-winner-container,
 .game-loser-container {
   display: flex;
-  width: 20em;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   height: 100%;
@@ -75,4 +70,29 @@
 
 .delete-match-button:hover {
   border: solid rgb(210, 93, 93) 1px;
+}
+@media screen and (max-width: 950px) {
+  .game-card {
+    height: 5em;
+    flex-direction: column;
+    border-radius: 1em;
+  }
+  .game-winner-container,
+  .game-loser-container {
+    flex-direction: row;
+    align-items: center;
+    height: 2.5em;
+    justify-content: space-between;
+  }
+  .game-card h3 {
+    display: block;
+    width: 30%;
+  }
+  .game-winner-container {
+    flex-direction: row-reverse;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.492);
+  }
+  .delete-match-button {
+    top: 1em;
+  }
 }

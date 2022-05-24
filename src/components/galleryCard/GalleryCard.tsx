@@ -40,7 +40,6 @@ function GalleryCard({ hamster, gallery }: Props) {
   async function deleteHamster() {
     let updatedRecoilHamsters: Hamster[] = []
     if (matches && hamster && hamsters) {
-      let i = 1
       const matchesToBeDeleted = [...matches].filter((m) => {
         return m.loserId === hamster.id || m.winnerId === hamster.id
       })
@@ -126,12 +125,6 @@ function GalleryCard({ hamster, gallery }: Props) {
               'Content-Type': 'application/json'
             }
           }
-          console.log(
-            updatedRecoilHamsters.length === matchesToBeDeleted.length
-          )
-          if (updatedRecoilHamsters.length === matchesToBeDeleted.length) {
-            updateRecoilHamster(updatedRecoilHamsters)
-          }
           try {
             const response: Response = await fetch(
               fixUrl(`/matches/${match.id}`),
@@ -142,11 +135,11 @@ function GalleryCard({ hamster, gallery }: Props) {
           } catch (e) {
             console.log(e)
           }
+          if (updatedRecoilHamsters.length === matchesToBeDeleted.length) {
+            updateRecoilHamster(updatedRecoilHamsters)
+          }
         }
         updateHamsterDeleteMatch()
-        i++
-
-        console.log(i)
         console.log(matchesToBeDeleted.length)
       }
       setMatches(updatedMatches)
@@ -164,9 +157,12 @@ function GalleryCard({ hamster, gallery }: Props) {
         settings
       )
       const data: any = await response.json()
-      return console.log(data)
+      console.log(data)
     } catch (e) {
-      return e
+      console.log(e)
+    }
+    if (updatedRecoilHamsters.length === 0) {
+      updateRecoilHamster(updatedRecoilHamsters)
     }
   }
   useEffect(() => {
@@ -193,7 +189,7 @@ function GalleryCard({ hamster, gallery }: Props) {
       />
       {moreInfo ? (
         <div className={`more-information`}>
-          {hamster.wins ? (
+          {hamster.wins && gallery ? (
             <div
               className="beaten-info"
               onClick={() => setBeatenInfo(!beatenInfo)}
