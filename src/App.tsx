@@ -99,6 +99,7 @@ function App() {
           <Route path="/gallery/*" element={<Gallery />} />
           <Route path="/stats" element={<Stats />} />
           <Route path="/history" element={<History />} />
+          <Route path="/*" element={<Home />} />
         </Routes>
       </main>
       <footer>
