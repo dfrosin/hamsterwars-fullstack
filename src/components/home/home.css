@@ -75,16 +75,23 @@
   cursor: pointer;
   transition: color 0.5s, background-color 0.5s, border 0.5s;
 }
+.try-again-img {
+  max-width: 12em;
+}
 .try-again:hover {
   background-color: rgba(235, 161, 161, 0.164);
   color: rgb(135, 1, 1);
   border: solid rgb(221, 110, 110);
+}
+.try-again-p {
+  padding: 0 1em;
 }
 .try-again-container {
   animation: fadeInFail 3s;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 @keyframes fadeInFail {

@@ -36,7 +36,7 @@ function Winner({
     <div className="winner">
       <div className="winner-container">
         <div className="behind-h2"></div>
-        <h2>Och vinnaren är...</h2>
+        <h2>Vinnaren</h2>
         <h3>{winnerHamster.name}</h3>
         <img
           className="hamster-image"
@@ -76,7 +76,7 @@ function Winner({
         </p>
       </div>
       <div className="loser-container">
-        <h2>Och förloraren är...</h2>
+        <h2>Förloraren</h2>
         <h3>{loserHamster.name}</h3>
         <img
           className="hamster-image"

@@ -4,9 +4,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1em;
   margin-bottom: 4em;
   z-index: 2;
+  padding: 1em 0;
   animation: 1s rotateOnLoad linear 0s;
   animation-iteration-count: 0;
   transition: transform 1s;
@@ -52,7 +52,8 @@
 .loser-container {
   position: relative;
   height: 24em;
-  width: 15em;
+  margin: 0 2em;
+  max-width: 15em;
   color: white;
   padding: 1em;
   display: flex;

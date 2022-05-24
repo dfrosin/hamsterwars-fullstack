@@ -2,11 +2,14 @@ html,
 body {
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 .App {
   min-height: 100vh;
   background-color: white;
   font-size: 1.5em;
+  overflow-x: hidden;
 }
 main {
   min-height: 100vh;
@@ -82,6 +85,7 @@ footer {
 }
 footer p {
   transition: text-shadow 0.2s;
+  padding: 0 1em;
   color: white;
   cursor: default;
 }
