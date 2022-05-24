@@ -45,11 +45,12 @@
 .more-information button {
   text-transform: uppercase;
   font-size: 0.7em;
-  color: white;
+  color: rgb(224, 120, 120);
   border-radius: 2em;
+  margin: 0 0.3em;
   padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.5);
   border: solid transparent;
-  background-color: rgba(0, 0, 0, 0.164);
   cursor: pointer;
   transition: color 0.5s, background-color 0.5s, border 0.5s;
 }

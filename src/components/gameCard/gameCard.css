@@ -10,7 +10,7 @@
   border-radius: 2em;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   box-shadow: 0em 0em 1em rgb(98, 69, 30);
-  transition: transform 0.5s, text-shadow 0.5s;
+  transition: transform 0.3s, text-shadow 0.3s;
 }
 .game-card:hover {
   transform: scale(1.05);

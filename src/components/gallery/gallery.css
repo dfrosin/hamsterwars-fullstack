@@ -88,20 +88,27 @@
   cursor: pointer;
   transform: scale(1.2);
 }
-.add-hamster-container:hover::after {
+.add-hamster-container::after {
   content: 'Lägg till en ny hamster';
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   position: absolute;
-  right: 3em;
-  top: 0;
+  right: -4em;
+  top: 0em;
+  opacity: 0;
   width: 10.3em;
   display: block;
   color: white;
   padding: 0.7em;
   font-size: 1em;
-  animation: 0.2s zoomInTooltip;
+  transform: scaleX(0);
+  transition: transform 0.2s, right 0.2s, box-shadow 0.2s, opacity 0.3s;
   border-radius: 2em;
+}
+.add-hamster-container:hover::after {
   box-shadow: 0em 0em 1em rgb(98, 69, 30);
+  transform: scaleX(1);
+  opacity: 1;
+  right: 3em;
 }
 .add-new-hamster {
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));

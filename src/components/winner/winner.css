@@ -57,7 +57,7 @@
   padding: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 2em;
   transition: transform 0.5s, box-shadow 0.5s;

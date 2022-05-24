@@ -25,7 +25,7 @@ main {
 }
 .desktop-nav {
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
-  box-shadow: inset 5px 5px 10px #1e2127ae;
+  box-shadow: inset 5px 5px 10px #1e212779;
   height: 6em;
   display: flex;
   justify-content: space-between;
@@ -75,6 +75,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 5px 5px 10px #1e212766;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   margin-top: 2em;
   height: 3em;
@@ -106,7 +107,7 @@ footer p:hover {
     justify-content: flex-start;
     align-items: center;
     padding: 0 2em;
-    z-index: 2;
+    z-index: 10;
   }
   .mobile-nav h1 {
     display: block;
@@ -127,7 +128,7 @@ footer p:hover {
     opacity: 0.8;
     transition: right 0.5s, opacity 0.5s;
     z-index: 4;
-    box-shadow: 0em 0em 1em rgb(98, 69, 30);
+    box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.468);
   }
   .menu a {
     display: flex;
