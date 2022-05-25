@@ -13,7 +13,6 @@ interface Props {
   loser: Hamster
   match: Match
 }
-
 function GameCard({ winner, loser, match }: Props) {
   const [winnerImg, setWinnerImg] = useState('')
   const [loserImg, setLoserImg] = useState('')

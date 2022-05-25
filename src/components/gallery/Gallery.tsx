@@ -169,116 +169,118 @@ function Gallery() {
                 </div>
               )}
               {addNew ? (
-                <div className="add-new-hamster">
-                  {loading ? (
-                    <div className="uploading">
-                      <Loading />
-                    </div>
-                  ) : null}
-                  <h2>Lägg till en ny hamster</h2>
-                  {imgUrl ? (
-                    <img
-                      className="hamster-image"
-                      src={imgUrl}
-                      alt="submitted image"
-                    />
-                  ) : (
-                    <img className="hamster-image" src={exampleHamster} />
-                  )}
-                  <div className="input-container">
-                    <input
-                      onChange={(event) => setNewName(event.target.value)}
-                      type="text"
-                      placeholder="Namn"
-                    />
-                    {!nameIsValid ? (
-                      <div
-                        warning-message="Hamstern måste ha ett namn. Helst något fint."
-                        className="warning"
-                      >
-                        !
+                <div className="container-add-new">
+                  <div className="add-new-hamster">
+                    {loading ? (
+                      <div className="uploading">
+                        <Loading />
                       </div>
                     ) : null}
-                  </div>
-                  <div className="input-container">
-                    <input
-                      onChange={(event) =>
-                        setNewAge(Number(event.target.value))
-                      }
-                      type="number"
-                      placeholder="Ålder"
-                    />
-                    {!ageIsValid ? (
-                      <div
-                        warning-message="En hamster kan inte ha en negativ ålder. Hur hade det sett ut?"
-                        className="warning"
-                      >
-                        !
-                      </div>
-                    ) : null}
-                  </div>
-                  <div className="input-container">
-                    <input
-                      onChange={(event) => setNewFood(event.target.value)}
-                      type="text"
-                      placeholder="Favoritmat"
-                    />
-                    {!foodIsValid ? (
-                      <div
-                        warning-message="Alla hamstrar har en favoriträtt. Fyll i med nånting smaskigt!"
-                        className="warning"
-                      >
-                        !
-                      </div>
-                    ) : null}
-                  </div>
-                  <div className="input-container">
-                    <input
-                      onChange={(event) => setNewLoves(event.target.value)}
-                      type="text"
-                      placeholder="Tycker om att ..."
-                    />
-                    {!lovesIsValid ? (
-                      <div
-                        warning-message="Nåt tycker väl hamstern om att göra? Fyll i en aktivitet."
-                        className="warning"
-                      >
-                        !
-                      </div>
-                    ) : null}
-                  </div>
-                  <div className="input-container">
-                    <label className="file-upload">
-                      Ladda upp en bild
-                      <input
-                        className="upload-input"
-                        type="file"
-                        accept="image/png, image/jpeg"
-                        onChange={(event) => hamsterImage(event)}
+                    <h2>Lägg till en ny hamster</h2>
+                    {imgUrl ? (
+                      <img
+                        className="hamster-image"
+                        src={imgUrl}
+                        alt="submitted image"
                       />
-                    </label>
-                    {!imgIsValid ? (
-                      <div
-                        warning-message="Vi vill se hur hamstern ser ut! Ladda upp en bild!"
-                        className="warning"
+                    ) : (
+                      <img className="hamster-image" src={exampleHamster} />
+                    )}
+                    <div className="input-container">
+                      <input
+                        onChange={(event) => setNewName(event.target.value)}
+                        type="text"
+                        placeholder="Namn"
+                      />
+                      {!nameIsValid ? (
+                        <div
+                          warning-message="Hamstern måste ha ett namn. Helst något fint."
+                          className="warning"
+                        >
+                          !
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="input-container">
+                      <input
+                        onChange={(event) =>
+                          setNewAge(Number(event.target.value))
+                        }
+                        type="number"
+                        placeholder="Ålder"
+                      />
+                      {!ageIsValid ? (
+                        <div
+                          warning-message="En hamster kan inte ha en negativ ålder. Hur hade det sett ut?"
+                          className="warning"
+                        >
+                          !
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="input-container">
+                      <input
+                        onChange={(event) => setNewFood(event.target.value)}
+                        type="text"
+                        placeholder="Favoritmat"
+                      />
+                      {!foodIsValid ? (
+                        <div
+                          warning-message="Alla hamstrar har en favoriträtt. Fyll i med nånting smaskigt!"
+                          className="warning"
+                        >
+                          !
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="input-container">
+                      <input
+                        onChange={(event) => setNewLoves(event.target.value)}
+                        type="text"
+                        placeholder="Tycker om att ..."
+                      />
+                      {!lovesIsValid ? (
+                        <div
+                          warning-message="Nåt tycker väl hamstern om att göra? Fyll i en aktivitet."
+                          className="warning"
+                        >
+                          !
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="input-container">
+                      <label className="file-upload">
+                        Ladda upp en bild
+                        <input
+                          className="upload-input"
+                          type="file"
+                          accept="image/png, image/jpeg"
+                          onChange={(event) => hamsterImage(event)}
+                        />
+                      </label>
+                      {!imgIsValid ? (
+                        <div
+                          warning-message="Vi vill se hur hamstern ser ut! Ladda upp en bild!"
+                          className="warning"
+                        >
+                          !
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="button-container">
+                      <button disabled={!formIsValid} onClick={uploadHamster}>
+                        Lägg till
+                      </button>
+                      <button
+                        onClick={() => {
+                          setAddNew(false)
+                          setNewImage(null)
+                          setImgUrl('')
+                        }}
                       >
-                        !
-                      </div>
-                    ) : null}
-                  </div>
-                  <div className="button-container">
-                    <button disabled={!formIsValid} onClick={uploadHamster}>
-                      Lägg till
-                    </button>
-                    <button
-                      onClick={() => {
-                        setAddNew(false)
-                        setNewImage(null)
-                        setImgUrl('')
-                      }}
-                    >
-                      Avbryt
-                    </button>
+                        Avbryt
+                      </button>
+                    </div>
                   </div>
                 </div>
               ) : null}

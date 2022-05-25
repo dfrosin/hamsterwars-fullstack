@@ -1,5 +1,6 @@
 .game-card {
   display: flex;
+  animation: fadeInAndGrow 1s;
   position: relative;
   justify-content: space-between;
   align-items: center;
@@ -84,9 +85,10 @@
     height: 2.5em;
     justify-content: space-between;
   }
-  .game-card h3 {
+  .results {
     display: block;
     width: 30%;
+    margin: 0 2em 0 0.5em;
   }
   .game-winner-container {
     flex-direction: row-reverse;
@@ -94,5 +96,16 @@
   }
   .delete-match-button {
     top: 1em;
+  }
+}
+
+@keyframes fadeInAndGrow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

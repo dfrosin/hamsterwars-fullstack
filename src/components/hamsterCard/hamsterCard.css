@@ -1,20 +1,23 @@
 .hamster-card {
   position: relative;
-  height: 22em;
-  width: 12em;
+  height: 2em;
+  width: 2em;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   padding: 2em;
-  border-radius: 2em;
   box-shadow: 0em 0em 1em rgb(98, 69, 30);
-  transition: transform 0.5s, box-shadow 0.5s, border-radius 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s, border-radius 0.5s,
+    height 5s width 5s;
   color: white;
   z-index: 4;
-  transform: scale(0.05);
+  transform: scale(0.1);
   border-radius: 100%;
 }
 .loaded-hamster {
   animation: 2s 1 growAfterAnimation;
+  height: 22em;
+  width: 12em;
   transform: scale(1);
+  transition: transform 0.5s;
   border-radius: 2em;
 }
 .choose-hamster {
@@ -36,7 +39,7 @@
 .choose-hamster:hover {
   opacity: 1;
 }
-.hamster-card:hover {
+.loaded-hamster:hover {
   transform: scale(1.06);
   box-shadow: 0em 0em 3em rgb(85, 73, 39);
 }
@@ -65,8 +68,8 @@
 .hamster-card > p {
   width: 12em;
 }
-
-.hamster-img {
+.hamster-card .hamster-img {
+  animation: 3s 1 growImg;
   width: 12em;
   height: 12em;
   object-fit: cover;
@@ -74,13 +77,26 @@
   box-shadow: 0em 0em 2em rgba(0, 0, 0, 0.647);
 }
 
+@keyframes growImg {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes growAfterAnimation {
   0% {
     transform: scale(0.05);
     z-index: 4;
+    height: 2em;
+    width: 2em;
   }
   100% {
     z-index: 4;
     transform: scale(1);
+    height: 22em;
+    width: 12em;
   }
 }

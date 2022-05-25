@@ -30,9 +30,10 @@
 
 .cutest-container {
   position: relative;
-  margin-top: 1em;
-  height: 24em;
-  width: 15em;
+  min-height: 24em;
+  width: 60%;
+  max-width: 15em;
+  margin: 1em 2em 0 2em;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   color: white;
   padding: 2em;
@@ -43,7 +44,7 @@
   border-radius: 2em;
   box-shadow: 0em 0em 1em rgb(98, 69, 30);
   transition: transform 0.5s, box-shadow 0.5s;
-  animation: 1s 1 growAfterAnimation;
+  animation: 1s 1 growOnLoad;
   color: rgb(36, 36, 36);
   z-index: 4;
 }
@@ -55,9 +56,10 @@
 .cutest-container h3 {
   color: white;
 }
-.hamster-img {
-  width: 12em;
-  height: 12em;
+.home .hamster-img {
+  max-height: 12em;
+  width: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0em 0em 2em rgba(0, 0, 0, 0.647);
@@ -100,5 +102,13 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes growOnLoad {
+  0% {
+    transform: scale(0.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }

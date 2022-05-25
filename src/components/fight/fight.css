@@ -1,14 +1,16 @@
 .fight-container {
   display: flex;
-  justify-content: center;
+  min-height: 100vh;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   z-index: 3;
+  overflow: hidden;
 }
 .fight-container h2 {
   display: block;
   position: relative;
-  margin: 0;
+  margin: 0 0 3em 0;
   z-index: 3;
   padding: 1em;
   border-radius: 2em;
@@ -33,7 +35,7 @@
   z-index: 2;
   animation: 1s rotateOnLoad linear 0s;
   animation-iteration-count: 0;
-  transition: transform 1s;
+  transition: transform 1s, gap 1s;
 }
 .fight {
   gap: 3em;
@@ -46,6 +48,7 @@
 }
 .loading {
   animation-iteration-count: infinite;
+  margin: 0;
 }
 .close {
   transform: scale(0);
