@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink, Link } from 'react-router-dom'
 import Home from './components/home/Home'
 import Fight from './components/fight/Fight'
 import Gallery from './components/gallery/Gallery'
@@ -21,29 +21,33 @@ function App() {
     >
       <header>
         <nav className="desktop-nav">
-          <div className="logo-container">
-            <img className="header-logo" src={logo} alt="site logo" />
-          </div>
-          <NavLink className="nav-home" to="/">
+          <Link className="logo-link" to="/">
+            <div className="logo-container">
+              <img className="header-logo" src={logo} alt="site logo" />
+            </div>
+          </Link>
+          <NavLink className="desk-nav" to="/">
             Hem
           </NavLink>
-          <NavLink className="nav-fight" to="/fight">
+          <NavLink className="desk-nav" to="/fight">
             Match
           </NavLink>
-          <NavLink className="nav-gallery" to="/gallery">
+          <NavLink className="desk-nav" to="/gallery">
             Galleri
           </NavLink>
-          <NavLink className="nav-stats" to="/stats">
+          <NavLink className="desk-nav" to="/stats">
             Statistik
           </NavLink>
-          <NavLink className="nav-history" to="/history">
+          <NavLink className="desk-nav" to="/history">
             Historik
           </NavLink>
         </nav>
         <nav className="mobile-nav">
-          <div className="logo-container">
-            <img className="header-logo" src={logo} alt="site logo" />
-          </div>
+          <Link to="/">
+            <div className="logo-container">
+              <img className="header-logo" src={logo} alt="site logo" />
+            </div>
+          </Link>
           <h1>Hamster Wars</h1>
           <div
             className={`hamburger${hamburgerOpen ? ' open' : ''}`}

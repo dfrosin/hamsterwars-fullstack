@@ -69,7 +69,7 @@
   width: 12em;
 }
 .hamster-card .hamster-img {
-  animation: 3s 1 growImg;
+  animation: 2s 1 growImg;
   width: 12em;
   height: 12em;
   object-fit: cover;
@@ -80,9 +80,13 @@
 @keyframes growImg {
   0% {
     transform: scale(0);
+    height: 0;
+    width: 0;
   }
   100% {
     transform: scale(1);
+    width: 12em;
+    height: 12em;
   }
 }
 

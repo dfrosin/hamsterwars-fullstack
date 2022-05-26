@@ -62,7 +62,7 @@
   align-items: center;
   border-radius: 2em;
   transition: transform 0.5s, box-shadow 0.5s;
-  animation: 1s 1 growAfterAnimation;
+  animation: 1s 1 fadeInAndGrow;
 }
 .winner-container {
   z-index: 4;
@@ -78,7 +78,7 @@
   position: absolute;
   background: linear-gradient(45deg, rgb(140, 201, 239), rgb(93, 119, 237));
   box-shadow: 0em 0em 1em rgb(98, 69, 30);
-  animation: 5s fadeIn;
+  animation: 5s fadeIn ease-in-out;
   z-index: 3;
   top: 13em;
 }

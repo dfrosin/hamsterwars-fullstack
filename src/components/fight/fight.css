@@ -10,7 +10,7 @@
 .fight-container h2 {
   display: block;
   position: relative;
-  margin: 0 0 3em 0;
+  margin: 0.5em 0 1em 0;
   z-index: 3;
   padding: 1em;
   border-radius: 2em;

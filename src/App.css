@@ -43,7 +43,7 @@ main {
   padding: 0 4em;
   z-index: -2;
 }
-.desktop-nav a {
+.desktop-nav .desk-nav {
   position: relative;
   z-index: 0;
   color: rgb(243, 232, 219);
@@ -57,10 +57,10 @@ main {
   align-items: center;
   transition: text-shadow 0.4s;
 }
-.desktop-nav a:hover {
+.desktop-nav .desk-nav:hover {
   text-shadow: 0px 0px 5px #fafafa;
 }
-.desktop-nav a::before {
+.desktop-nav .desk-nav::before {
   position: absolute;
   pointer-events: none;
   z-index: 0;
@@ -78,7 +78,7 @@ main {
   border-radius: 50%;
   top: 3em;
 }
-.desktop-nav a:hover::before {
+.desktop-nav .desk-nav:hover::before {
   top: 3.5em;
 }
 footer {
