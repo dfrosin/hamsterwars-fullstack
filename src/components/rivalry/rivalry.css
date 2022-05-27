@@ -11,6 +11,8 @@
 .rivalry > h3 {
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   background-clip: text;
+  margin-left: 1em;
+  margin-right: 1em;
   text-align: center;
   color: white;
   -webkit-background-clip: text;
@@ -58,4 +60,11 @@
   font-weight: 700;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 500px) {
+  .result-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

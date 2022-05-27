@@ -9,12 +9,16 @@
   display: flex;
   align-items: center;
   padding: 0 2em;
-  height: 4em;
+  height: 2em;
   z-index: 2;
+  text-decoration: none;
+}
+.sub-nav a p {
   text-transform: uppercase;
   font-weight: 700;
   background: linear-gradient(45deg, rgb(247, 182, 193), rgb(237, 93, 93));
   background-clip: text;
+  text-decoration: none;
   transition: transform 0.3s, text-shadow 0.3s;
   color: white;
   -webkit-background-clip: text;
@@ -72,7 +76,16 @@
   z-index: 5;
   border-radius: 100%;
 }
+i.icon.icon-back {
+  vertical-align: top !important;
+}
 .add-hamster-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
   height: 1.7em;
   width: 1.7em;
   font-size: 1.5em;
@@ -180,6 +193,7 @@
 .add-new-hamster input {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
+  font-family: 'Nunito', sans-serif;
   width: 100%;
   max-width: 15em;
   height: 1.6em;
@@ -294,6 +308,7 @@ input[type='number'] {
 }
 @media screen and (max-width: 600px) {
   .sub-nav {
+    height: 6em;
     flex-direction: column;
     margin-top: 1em;
   }

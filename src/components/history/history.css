@@ -10,6 +10,7 @@
 .history h2 {
   display: block;
   z-index: 3;
+  margin: 1em;
   text-align: center;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   background-clip: text;

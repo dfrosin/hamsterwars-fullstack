@@ -128,13 +128,13 @@ function Gallery() {
     <>
       <div className="sub-nav">
         <NavLink to="/gallery" hover-attr="Galleri">
-          Galleri
+          <p>Galleri</p>
         </NavLink>
         <NavLink to="/gallery/rivalry" hover-attr="Rivalitet">
-          Rivalitet
+          <p>Rivalitet</p>
         </NavLink>
         <NavLink to="/gallery/slackers" hover-attr="Pigga & Lata">
-          Pigga & Lata
+          <p>Pigga & Lata</p>
         </NavLink>
       </div>
       <Routes>

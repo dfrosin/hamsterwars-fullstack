@@ -103,6 +103,7 @@
 .try-again-img:hover {
   animation: wiggle 500ms infinite;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
