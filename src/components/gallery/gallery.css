@@ -76,16 +76,12 @@
   z-index: 5;
   border-radius: 100%;
 }
-i.icon.icon-back {
-  vertical-align: top !important;
-}
 .add-hamster-container button {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
   height: 1.7em;
   width: 1.7em;
   font-size: 1.5em;
@@ -193,7 +189,7 @@ i.icon.icon-back {
 .add-new-hamster input {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', 'Roboto', sans-serif;
   width: 100%;
   max-width: 15em;
   height: 1.6em;

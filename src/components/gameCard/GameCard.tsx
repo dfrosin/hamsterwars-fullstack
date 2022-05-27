@@ -161,7 +161,7 @@ function GameCard({ winner, loser, match }: Props) {
             alt={`picture of ${loser.name}`}
           />
           <button onClick={deleteMatch} className="delete-match-button">
-            x
+            <p>x</p>
           </button>
         </div>
       </div>

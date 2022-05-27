@@ -47,6 +47,7 @@
   opacity: 0;
   display: flex;
   justify-content: center;
+  background-color: transparent;
   align-items: center;
   width: 2em;
   height: 2em;
@@ -56,12 +57,16 @@
   border-radius: 100%;
   right: -2em;
   font-weight: 700;
+
+  border: transparent;
+}
+.delete-match-button p {
+  font-family: 'Nunito', 'Roboto', sans-serif;
   background: linear-gradient(45deg, rgb(239, 140, 156), rgb(237, 93, 93));
   background-clip: text;
   color: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: transparent;
 }
 .game-card:hover .delete-match-button {
   transition: opacity 0.5s;
@@ -96,6 +101,18 @@
   }
   .delete-match-button {
     top: 1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    right: 2em;
+  }
+  .delete-match-button p {
+    background: none;
+    color: rgb(226, 94, 94);
+    background-clip: none;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: rgb(226, 94, 94);
+  }
+  .delete-match-button:hover {
+    background-color: rgba(107, 58, 58, 0.7);
   }
 }
 
