@@ -55,6 +55,7 @@
   position: absolute;
   font-size: 1.2em;
   border-radius: 100%;
+
   right: -2em;
   font-weight: 700;
 
@@ -70,12 +71,12 @@
 }
 .game-card:hover .delete-match-button {
   transition: opacity 0.5s;
-  transition: border 0.5s;
   opacity: 1;
 }
 
 .delete-match-button:hover {
   border: solid rgb(210, 93, 93) 1px;
+  transition: border 0.5s;
 }
 @media screen and (max-width: 950px) {
   .game-card {
