@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
   touch-action: pan-y;
   min-height: 100vh;
   background-color: white;
-  font-size: 1.3em;
+  font-size: 18px;
   overflow-x: hidden;
 }
 main {
