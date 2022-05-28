@@ -82,10 +82,6 @@ function Gallery() {
         getDownloadURL(ref(storage, newName)).then((url) => {
           imageName = url
           postData()
-          setNewImage(null)
-          setAddNew(false)
-          setLoading(false)
-          setImgUrl('')
         })
       })
 
@@ -115,11 +111,15 @@ function Gallery() {
           )
           const data: any = await response.json()
           console.log(data)
+          setNewImage(null)
+          setAddNew(false)
+          setLoading(false)
+          setImgUrl('')
+          getMatches()
+          getHamsters()
         } catch (e: any) {
           console.log(e)
         }
-        getMatches()
-        getHamsters()
       }
     }
   }
