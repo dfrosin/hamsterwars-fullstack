@@ -109,10 +109,7 @@ function Gallery() {
           body: JSON.stringify(newHamster)
         }
         try {
-          const response: Response = await fetch(
-            'http://localhost:8090/hamsters',
-            settings
-          )
+          const response: Response = await fetch(fixUrl('/hamsters'), settings)
           const data: any = await response.json()
           console.log(data)
           getMatches()

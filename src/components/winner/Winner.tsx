@@ -57,18 +57,18 @@ function Winner({
               }${
                 winnerHamster.wins
                   ? `, vunnit ${
-                      winnerHamster.wins === 1
+                      winnerHamster.wins + 1 === 1
                         ? 'en gång '
-                        : `${winnerHamster.wins} gånger `
+                        : `${winnerHamster.wins + 1} gånger `
                     }`
-                  : 'men har inte vunnit någon gång'
+                  : ' men har inte vunnit någon gång'
               }
               ${
                 winnerHamster.defeats
                   ? `och förlorat ${
-                      winnerHamster.defeats + 1 === 1
+                      winnerHamster.defeats === 1
                         ? 'en gång'
-                        : `${winnerHamster.defeats + 1} gånger`
+                        : `${winnerHamster.defeats} gånger`
                     }`
                   : 'och aldrig förlorat'
               }.`
@@ -95,20 +95,20 @@ function Winner({
                   ? 'en match'
                   : `${loserHamster.games + 1} matcher`
               }${
-                loserHamster.wins + 1
+                loserHamster.wins
                   ? `, vunnit ${
-                      loserHamster.wins + 1 === 1
+                      loserHamster.wins === 1
                         ? 'en gång '
-                        : `${loserHamster.wins + 1} gånger `
+                        : `${loserHamster.wins} gånger `
                     }`
                   : 'men har inte vunnit någon gång'
               }
               ${
                 loserHamster.defeats
                   ? `och förlorat ${
-                      loserHamster.defeats === 1
+                      loserHamster.defeats + 1 === 1
                         ? 'en gång'
-                        : `${loserHamster.defeats} gånger`
+                        : `${loserHamster.defeats + 1} gånger`
                     }`
                   : 'och aldrig förlorat'
               }.`
