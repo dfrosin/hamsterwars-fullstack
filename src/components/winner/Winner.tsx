@@ -55,7 +55,7 @@ function Winner({
                   ? 'en match'
                   : `${winnerHamster.games + 1} matcher`
               }${
-                winnerHamster.wins
+                winnerHamster.wins + 1
                   ? `, vunnit ${
                       winnerHamster.wins + 1 === 1
                         ? 'en gång '
@@ -104,7 +104,7 @@ function Winner({
                   : 'men har inte vunnit någon gång'
               }
               ${
-                loserHamster.defeats
+                loserHamster.defeats + 1
                   ? `och förlorat ${
                       loserHamster.defeats + 1 === 1
                         ? 'en gång'
