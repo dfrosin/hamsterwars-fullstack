@@ -189,7 +189,7 @@
 .add-new-hamster input {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
-  font-family: 'Nunito', 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
   width: 100%;
   max-width: 15em;
   height: 1.6em;

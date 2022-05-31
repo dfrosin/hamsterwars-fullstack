@@ -34,6 +34,10 @@ function Gallery() {
     const response: Response = await fetch(fixUrl('/hamsters'))
     const apiData: Hamster[] = await response.json()
     setHamsters(apiData)
+    setNewImage(null)
+    setAddNew(false)
+    setLoading(false)
+    setImgUrl('')
   }
 
   async function getMatches() {
@@ -111,10 +115,6 @@ function Gallery() {
           )
           const data: any = await response.json()
           console.log(data)
-          setNewImage(null)
-          setAddNew(false)
-          setLoading(false)
-          setImgUrl('')
           getMatches()
           getHamsters()
         } catch (e: any) {
