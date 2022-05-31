@@ -1,4 +1,4 @@
-import './galleryCard.css'
+// import './galleryCard.css'
 import { useRecoilState } from 'recoil'
 import { useState, useEffect } from 'react'
 import { Hamster } from '../../models/Hamster'
@@ -14,9 +14,8 @@ interface Props {
 }
 
 function GalleryCard({ hamster, gallery }: Props) {
+  const [moreInfo, setMoreInfo] = useState(false)
   const [beatenInfo, setBeatenInfo] = useState(false)
-  const [close, setClose] = useState('')
-  const [focus, setFocus] = useState('')
   const [hamsters, setHamsters] = useRecoilState(HamstersAtom)
   const [matches, setMatches] = useRecoilState(MatchesAtom)
   const [imgUrl, setImgUrl] = useState('')
@@ -171,47 +170,44 @@ function GalleryCard({ hamster, gallery }: Props) {
   }, [])
 
   return (
-    <li className="gallery-card-list" key={hamster.id}>
-      <div
-        className={`gallery-card${focus}`}
-        onMouseEnter={() => setFocus(' focus')}
-        onMouseLeave={() => {
-          setBeatenInfo(false)
-          setTimeout(() => {
-            setFocus('')
-          }, 500)
-        }}
-      >
-        <h3>{hamster.name}</h3>
-        <img
-          className="hamster-image"
-          src={imgUrl}
-          alt={`picture of ${hamster.name}`}
-        />
-        {hamster.wins && gallery ? (
-          <div
-            className="beaten-info"
-            onClick={() => {
-              if (!beatenInfo) {
-                setBeatenInfo(true)
-              } else {
-                setClose(' close')
-                setTimeout(() => {
-                  setBeatenInfo(false)
-                  setClose('')
-                }, 400)
-              }
-            }}
-          >
-            i
-          </div>
-        ) : null}
-        <div className="hover-information">
+    <li
+      onMouseEnter={() => {
+        setMoreInfo(true)
+      }}
+      onMouseLeave={() => {
+        setMoreInfo(false)
+        setBeatenInfo(false)
+      }}
+      className="gallery-card"
+      key={hamster.id}
+    >
+      <h3>{hamster.name}</h3>
+      <img
+        className="hamster-image"
+        src={imgUrl}
+        alt={`picture of ${hamster.name}`}
+      />
+      {moreInfo ? (
+        <div className={`more-information`}>
+          {hamster.wins && gallery ? (
+            <div
+              className="beaten-info"
+              onClick={() => setBeatenInfo(!beatenInfo)}
+            >
+              i
+            </div>
+          ) : null}
           {beatenInfo ? (
-            <div className={`beaten-container${close}`}>
+            <div className="beaten-container">
               <MatchWinners winnerId={hamster.id} />
             </div>
           ) : null}
+          <h3>{hamster.name}</h3>
+          <img
+            className="hamster-image"
+            src={imgUrl}
+            alt={`picture of ${hamster.name}`}
+          />
           <p> Ålder: {hamster.age}</p>
           <p>
             Här har vi en hamster som gillar att {hamster.loves} och äter helst
@@ -240,7 +236,7 @@ function GalleryCard({ hamster, gallery }: Props) {
           </p>
           {gallery ? <button onClick={deleteHamster}>Ta bort</button> : null}
         </div>
-      </div>
+      ) : null}
     </li>
   )
 }

@@ -11,7 +11,7 @@
 .worst-container {
   z-index: 0;
   display: flex;
-  max-width: 40em;
+  max-width: 50em;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
