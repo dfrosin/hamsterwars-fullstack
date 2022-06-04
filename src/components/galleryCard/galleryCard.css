@@ -60,7 +60,8 @@
 }
 .close {
   transform: scale(0);
-  transition: transform 0.4s;
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.4s;
 }
 .focus {
   z-index: 4;
@@ -159,8 +160,10 @@
 @keyframes zoomInSmall {
   0% {
     transform: scale(0);
+    opacity: 0;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
